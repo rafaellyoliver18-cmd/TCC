@@ -25,24 +25,23 @@
         <li>Evite sobrecarga mental</li>
         <li>Converse com alguém de confiança</li>
     </ul>
-</section>
-
-<script src="script.js"></script>
-<section id="desabafo">
-    <h2>💬 Momento Desabafo</h2>
-    <p>Escreva o que você está sentindo. Este espaço é só seu.</p>
-
-```
-<textarea id="textoDesabafo" placeholder="Digite aqui..." rows="6"></textarea>
-
-<br><br>
-
-<button onclick="salvarDesabafo()">Salvar</button>
-
-<h3>📝 Seus desabafos:</h3>
-<ul id="listaDesabafos"></ul>
-```
 
 </section>
+<script>
+    function salvar() {
+        let texto = document.getElementById("texto").value;
+    
+        if (texto.trim() === "") {
+            alert("Por favor, escreva como você está se sentindo!");
+            return;
+        }
+    
+        // opcional: salvar no navegador
+        localStorage.setItem("sentimento", texto);
+    
+        // redireciona para a página de desabafo
+        window.location.href = "desabafo.html";
+    }
+    </script>
 </body>
 </html>
